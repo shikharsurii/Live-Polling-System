@@ -1,0 +1,863 @@
+.teacher-view {
+  min-height: 100vh;
+  background: #F2F2F2;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  position: relative;
+}
+
+/* Create Poll Styles */
+.create-poll-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.create-poll-section {
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid #E5E5E5;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  color: #373737;
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.question-input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #E5E5E5;
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #FFFFFF;
+  transition: border-color 0.3s ease;
+}
+
+.question-input:focus {
+  outline: none;
+  border-color: #7F6DDA;
+}
+
+.timer-section {
+  margin-bottom: 2rem;
+}
+
+.timer-dropdown {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #FAFAFA;
+  border: 1px solid #E5E5E5;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+.timer-label {
+  color: #373737;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.timer-select {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.dropdown-arrow {
+  color: #6E6E6E;
+  font-size: 0.7rem;
+}
+
+.options-section {
+  margin-bottom: 2rem;
+}
+
+.options-section label {
+  display: block;
+  font-weight: 600;
+  color: #373737;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.option-row {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #FAFAFA;
+  border-radius: 8px;
+  border: 1px solid #E5E5E5;
+}
+
+.option-header {
+  margin-bottom: 0.5rem;
+}
+
+.option-header strong {
+  color: #373737;
+  font-size: 0.9rem;
+}
+
+.option-input-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.option-input-group input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #E5E5E5;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: #FFFFFF;
+}
+
+.yes-no-options {
+  display: flex;
+  gap: 1rem;
+}
+
+.checkbox-option {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #6E6E6E;
+  cursor: pointer;
+}
+
+.checkbox-option input {
+  margin: 0;
+}
+
+.add-option-btn {
+  background: #7F6DDA;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.action-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.create-poll-btn {
+  padding: 12px 24px;
+  background: #7F6DDA;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  flex: 1;
+}
+
+.create-poll-btn:disabled {
+  background: #E5E5E5;
+  color: #6E6E6E;
+  cursor: not-allowed;
+}
+
+/* Live Results Styles */
+.live-results-container {
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 2rem;
+  border: 1px solid #E5E5E5;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.results-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.results-header h1 {
+  color: #373737;
+  font-size: 2rem;
+  margin: 0;
+}
+
+.end-poll-btn {
+  background: #DC3545;
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.current-question {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.current-question h2 {
+  color: #373737;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.live-results {
+  margin-bottom: 2rem;
+}
+
+.result-item {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #FAFAFA;
+  border-radius: 8px;
+  border: 1px solid #E5E5E5;
+}
+
+.result-option {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.result-option input {
+  margin: 0;
+}
+
+.option-text {
+  flex: 1;
+  color: #373737;
+  font-weight: 500;
+}
+
+.percentage {
+  color: #7F6DDA;
+  font-weight: 600;
+  min-width: 40px;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #E5E5E5;
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+  height: 100%;
+  background: #7F6DDA;
+  border-radius: 3px;
+  transition: width 0.3s ease;
+}
+
+.vote-count {
+  color: #6E6E6E;
+  font-size: 0.9rem;
+}
+
+.total-votes {
+  text-align: center;
+  padding-top: 1rem;
+  border-top: 1px solid #E5E5E5;
+  font-weight: 600;
+  color: #373737;
+  font-size: 1.1rem;
+}
+
+/* Chat Button */
+.chat-button {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: #7F6DDA;
+  color: #FFFFFF;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(127, 109, 218, 0.3);
+  z-index: 1000;
+  transition: transform 0.3s ease;
+}
+
+.chat-button:hover {
+  transform: scale(1.1);
+}
+
+/* Chat Panel */
+.chat-panel {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 400px;
+  height: 500px;
+  background: #FFFFFF;
+  border-radius: 12px;
+  border: 1px solid #E5E5E5;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #E5E5E5;
+  background: #FAFAFA;
+  border-radius: 12px 12px 0 0;
+}
+
+.chat-header h3 {
+  margin: 0;
+  color: #373737;
+  font-size: 1.2rem;
+}
+
+.close-chat {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #6E6E6E;
+}
+
+.chat-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.participants-section {
+  padding: 1rem;
+  border-bottom: 1px solid #E5E5E5;
+  flex: 1;
+}
+
+.participants-section h4 {
+  margin: 0 0 1rem 0;
+  color: #373737;
+  font-size: 1rem;
+}
+
+.students-list {
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+.student-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.student-row:last-child {
+  border-bottom: none;
+}
+
+.student-name {
+  color: #373737;
+  font-weight: 500;
+}
+
+.student-status {
+  font-size: 0.8rem;
+}
+
+.kick-out-btn {
+  background: #DC3545;
+  color: #FFFFFF;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+
+.chat-section {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid #E5E5E5;
+}
+
+.chat-messages {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  background: #FAFAFA;
+  max-height: 200px;
+}
+
+.chat-message {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #373737;
+}
+
+.no-messages {
+  text-align: center;
+  color: #6E6E6E;
+  font-style: italic;
+}
+
+.chat-input {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-top: 1px solid #E5E5E5;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #E5E5E5;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: #FFFFFF;
+}
+
+.chat-input button {
+  background: #7F6DDA;
+  color: #FFFFFF;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* Poll History Button */
+.poll-history-button {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  background: #5F6FD0;
+  color: #FFFFFF;
+  padding: 12px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(95, 111, 208, 0.3);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  transition: transform 0.3s ease;
+}
+
+.poll-history-button:hover {
+  transform: scale(1.05);
+}
+
+.history-count {
+  background: #FFFFFF;
+  color: #5F6FD0;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Poll History Modal */
+.poll-history-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.poll-history-content {
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 600px;
+  width: 90%;
+  max-height: 80vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.history-header h2 {
+  margin: 0;
+  color: #373737;
+}
+
+.close-button {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #6E6E6E;
+}
+
+.history-item {
+  margin-bottom: 2rem;
+}
+
+.history-item h3 {
+  color: #373737;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.history-results {
+  margin-top: 1rem;
+}
+
+.history-result-item {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  background: #FAFAFA;
+  border-radius: 6px;
+}
+
+.divider {
+  height: 1px;
+  background: #E5E5E5;
+  margin: 2rem 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .teacher-view {
+    padding: 1rem;
+  }
+  
+  .chat-panel {
+    width: 90%;
+    height: 70%;
+    right: 5%;
+    bottom: 5%;
+  }
+  
+  .poll-history-content {
+    width: 95%;
+    padding: 1rem;
+  }
+  
+  .chat-button {
+    bottom: 1rem;
+    right: 1rem;
+  }
+  
+  .poll-history-button {
+    top: 1rem;
+    right: 1rem;
+  }
+}/* Ask New Question Section */
+.ask-new-question-section {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #E5E5E5;
+}
+
+.ask-new-question-btn {
+  background: #7F6DDA;
+  color: #FFFFFF;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ask-new-question-btn:hover {
+  background: #6D5BC8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(127, 109, 218, 0.3);
+}
+
+/* Remove the old end poll button from header */
+.results-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.results-header h1 {
+  color: #373737;
+  font-size: 2rem;
+  margin: 0;
+}
+/* Add these new styles to your existing TeacherView.css */
+
+/* Chat Tabs */
+.chat-tabs {
+  display: flex;
+  border-bottom: 1px solid #E5E5E5;
+  background: #FAFAFA;
+}
+
+.chat-tab {
+  flex: 1;
+  padding: 12px 16px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #6E6E6E;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.chat-tab.active {
+  color: #7F6DDA;
+  border-bottom-color: #7F6DDA;
+  background: #FFFFFF;
+}
+
+/* Chat Messages with Colors */
+.chat-messages {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  background: #FAFAFA;
+  max-height: 300px;
+}
+
+.teacher-message {
+  background: #7F6DDA;
+  color: #FFFFFF;
+  padding: 8px 12px;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+  max-width: 80%;
+  align-self: flex-start;
+}
+
+.student-message {
+  background: #E8EAF6;
+  color: #373737;
+  padding: 8px 12px;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+  max-width: 80%;
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.teacher-message strong,
+.student-message strong {
+  display: block;
+  margin-bottom: 2px;
+  font-size: 0.8rem;
+}
+
+.teacher-message strong {
+  color: #E8EAF6;
+}
+
+.student-message strong {
+  color: #7F6DDA;
+}
+
+/* Blue Kick Out Button */
+.kick-out-btn {
+  background: none;
+  color: #7F6DDA;
+  border: none;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding: 2px 6px;
+}
+
+.kick-out-btn:hover {
+  color: #6D5BC8;
+}
+
+/* Chat Input */
+.chat-input {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-top: 1px solid #E5E5E5;
+  background: #FFFFFF;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #E5E5E5;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  background: #FFFFFF;
+}
+
+.chat-input button {
+  background: #7F6DDA;
+  color: #FFFFFF;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+/* Ask New Question Button */
+.ask-new-question-section {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 1px solid #E5E5E5;
+}
+
+.ask-new-question-btn {
+  background: #7F6DDA;
+  color: #FFFFFF;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.ask-new-question-btn:hover {
+  background: #6D5BC8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(127, 109, 218, 0.3);
+}
+
+/* Results Header */
+.results-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.results-header h1 {
+  color: #373737;
+  font-size: 2rem;
+  margin: 0;
+}
+
+/* Chat Panel Layout */
+.chat-panel {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 400px;
+  height: 500px;
+  background: #FFFFFF;
+  border-radius: 12px;
+  border: 1px solid #E5E5E5;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.participants-section {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.participants-section h4 {
+  margin: 0 0 1rem 0;
+  color: #373737;
+  font-size: 1rem;
+}
+
+.students-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.student-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.student-row:last-child {
+  border-bottom: none;
+}
+
+.student-name {
+  color: #373737;
+  font-weight: 500;
+}
+
+.student-status {
+  font-size: 0.8rem;
+}
+
+/* Remove old chat section styles that conflict */
+.chat-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}

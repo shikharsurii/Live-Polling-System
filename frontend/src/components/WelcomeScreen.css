@@ -1,0 +1,281 @@
+.welcome-container {
+  min-height: 100vh;
+  background: #F2F2F2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.welcome-content {
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Logo */
+.logo {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.logo-text {
+  font-size: 15px;
+  font-weight: 700;
+  color: #FFFFFF;
+  text-transform: capitalize; /* This will make "Interview poll" */
+  letter-spacing: -0.5px;
+  background: #7F6DDA;
+  padding: 12px 24px;
+  border-radius: 50px;
+  display: inline-block;
+}
+
+/* Welcome Header */
+.welcome-header {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 800px;
+}
+
+.welcome-header h1 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #373737;
+  margin-bottom: 16px;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+
+.welcome-header p {
+  font-size: 18px;
+  color: #6E6E6E;
+  line-height: 1.5;
+  margin: 0;
+  font-weight: 400;
+}
+
+/* Role Cards */
+.role-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 40px;
+}
+
+.role-card {
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 40px 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.role-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  border-color: #E5E5E5;
+}
+
+.role-card.selected {
+  border: 2px solid;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Student Card */
+.student-card {
+  border-left: 6px solid #7F6DDA;
+}
+
+.student-card.selected {
+  border-color: #7F6DDA;
+  border-left: 6px solid #7F6DDA;
+}
+
+/* Teacher Card */
+.teacher-card {
+  border-left: 6px solid #5F6FD0;
+}
+
+.teacher-card.selected {
+  border-color: #5F6FD0;
+  border-left: 6px solid #5F6FD0;
+}
+
+.card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card-content h3 {
+  font-size: 28px;
+  font-weight: 600;
+  color: #373737;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.card-content p {
+  font-size: 16px;
+  color: #6E6E6E;
+  line-height: 1.5;
+  margin: 0;
+  flex: 1;
+}
+
+.card-footer {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid #E5E5E5;
+}
+
+.card-footer span {
+  font-size: 14px;
+  color: #6E6E6E;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* Continue Section */
+.continue-section {
+  text-align: center;
+  width: 100%;
+  max-width: 900px;
+}
+
+.continue-btn {
+  background: #E5E5E5;
+  color: #6E6E6E;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 48px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: not-allowed;
+  transition: all 0.3s ease;
+  min-width: 200px;
+}
+
+.continue-btn.active {
+  background: #7F6DDA;
+  color: #FFFFFF;
+  cursor: pointer;
+}
+
+.continue-btn.active:hover {
+  background: #6D5BC8;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(127, 109, 218, 0.3);
+}
+
+.continue-btn:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .role-cards {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+    gap: 20px;
+  }
+  
+  .role-card {
+    height: 250px;
+    padding: 30px 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .welcome-container {
+    padding: 30px 15px;
+  }
+  
+  .logo {
+    margin-bottom: 30px;
+  }
+  
+  .logo-text {
+    font-size: 20px;
+  }
+  
+  .welcome-header {
+    margin-bottom: 40px;
+  }
+  
+  .welcome-header h1 {
+    font-size: 32px;
+  }
+  
+  .welcome-header p {
+    font-size: 16px;
+  }
+  
+  .card-content h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  
+  .card-content p {
+    font-size: 15px;
+  }
+  
+  .role-card {
+    padding: 25px 20px;
+    height: 220px;
+  }
+  
+  .continue-btn {
+    padding: 14px 40px;
+    font-size: 16px;
+    min-width: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .welcome-header h1 {
+    font-size: 28px;
+    margin-bottom: 12px;
+  }
+  
+  .welcome-header p {
+    font-size: 15px;
+  }
+  
+  .card-content h3 {
+    font-size: 22px;
+  }
+  
+  .card-content p {
+    font-size: 14px;
+  }
+  
+  .card-footer span {
+    font-size: 13px;
+  }
+  
+  .role-card {
+    height: 200px;
+    padding: 20px;
+  }
+  
+  .continue-btn {
+    padding: 12px 32px;
+    font-size: 16px;
+    min-width: 160px;
+  }
+}

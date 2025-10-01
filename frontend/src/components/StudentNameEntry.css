@@ -1,0 +1,165 @@
+.name-entry-container {
+  min-height: 100vh;
+  background: #F2F2F2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.name-entry-card {
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 3rem;
+  max-width: 500px;
+  width: 100%;
+  border: 1px solid #E5E5E5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  margin-bottom: 2rem;
+}
+
+.card-header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #373737;
+  margin-bottom: 16px;
+  line-height: 1.3;
+}
+
+.card-header p {
+  color: #6E6E6E;
+  line-height: 1.5;
+  font-size: 16px;
+  margin: 0;
+}
+
+.card-header p strong {
+  color: #373737;
+  font-weight: 600;
+}
+
+.divider {
+  height: 1px;
+  background: #E5E5E5;
+  margin: 2rem 0;
+}
+
+.name-form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-label {
+  font-size: 16px;
+  font-weight: 600;
+  color: #373737;
+  margin-bottom: 8px;
+}
+
+.name-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.name-input {
+  padding: 12px 16px;
+  border: 1px solid #E5E5E5;
+  border-radius: 8px;
+  font-size: 16px;
+  background: #FFFFFF;
+  color: #373737;
+  transition: border-color 0.2s ease;
+}
+
+.name-input:focus {
+  outline: none;
+  border-color: #7F6DDA;
+}
+
+.name-input::placeholder {
+  color: #6E6E6E;
+}
+
+.continue-btn {
+  padding: 12px 24px;
+  background: #7F6DDA;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: 100%;
+}
+
+.continue-btn:hover {
+  background: #6D5BC8;
+}
+
+.continue-btn:active {
+  background: #5D4BB8;
+}
+
+/* Remove animations for cleaner look */
+.name-entry-card {
+  animation: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .name-entry-container {
+    padding: 1rem;
+  }
+  
+  .name-entry-card {
+    padding: 2rem;
+  }
+  
+  .card-header h1 {
+    font-size: 22px;
+  }
+  
+  .card-header p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .name-entry-card {
+    padding: 1.5rem;
+  }
+  
+  .card-header h1 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+  
+  .card-header p {
+    font-size: 14px;
+  }
+  
+  .form-label {
+    font-size: 15px;
+  }
+  
+  .name-input {
+    padding: 10px 14px;
+    font-size: 15px;
+  }
+  
+  .continue-btn {
+    padding: 10px 20px;
+    font-size: 15px;
+  }
+  
+  .divider {
+    margin: 1.5rem 0;
+  }
+}
